@@ -217,31 +217,6 @@
                                 <a href="#" class="nav-link">
                                     <i class="fas fa-user"></i>
                                     <p>
-                                        Reporteria
-                                        <i class="fas fa-angle-left right"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="./usuarios/crearUsuario.jsp" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Reporte 1.</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="./usuarios/resetPasWord.jsp" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                            <p>Reporte 2.</p>
-                                        </a>
-                                    </li>                                    
-
-
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-user"></i>
-                                    <p>
                                         Usuarios
                                         <i class="fas fa-angle-left right"></i>
                                     </p>
@@ -387,64 +362,8 @@
                     <div class="container-fluid">
                         <!-- Small boxes (Stat box) -->
                         <div class="row">
-                            <div class="col-lg-3 col-6">
-                                <!-- small box -->
-                                <div class="small-box bg-info">
-                                    <div class="inner">
-                                        <h3>150</h3>
-
-                                        <p>New Orders</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-bag"></i>
-                                    </div>
-                                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-lg-3 col-6">
-                                <!-- small box -->
-                                <div class="small-box bg-success">
-                                    <div class="inner">
-                                        <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                                        <p>Bounce Rate</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-stats-bars"></i>
-                                    </div>
-                                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-lg-3 col-6">
-                                <!-- small box -->
-                                <div class="small-box bg-warning">
-                                    <div class="inner">
-                                        <h3>44</h3>
-
-                                        <p>User Registrations</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-person-add"></i>
-                                    </div>
-                                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                            <!-- ./col -->
-                            <div class="col-lg-3 col-6">
-                                <!-- small box -->
-                                <div class="small-box bg-danger">
-                                    <div class="inner">
-                                        <h3>65</h3>
-
-                                        <p>Unique Visitors</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-pie-graph"></i>
-                                    </div>
-                                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                                </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <iframe width="1200" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiYjBhNDBlYzUtN2UwNy00MjU4LTg0ZjctNjg1MzhjNjc4ZjkwIiwidCI6IjVmNTNiNGNlLTYzZDQtNGVlOC04OGQyLTIyZjBiMmQ0YjI3YSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
                             </div>
                             <!-- ./col -->
                         </div>
