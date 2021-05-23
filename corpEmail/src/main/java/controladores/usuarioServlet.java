@@ -8,6 +8,7 @@ package controladores;
 import controladorServlet.ArrayOfString;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,23 +31,20 @@ public class usuarioServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     conectionUser conexionUsuario = new conectionUser();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String usuario = request.getParameter("usuario");
         String password = request.getParameter("password");
         ArrayOfString dataUsuario = conexionUsuario.UsuarioConect(usuario, password);
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet usuarioServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet usuarioServlet at " + dataUsuario.getString() + " xHola mundo</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        if (usuario.equals(dataUsuario.getString().get(7)) && password.equals(dataUsuario.getString().get(1))) {
+            response.sendRedirect("./modulos/inicio.jsp");
+
+        } else {
+            RequestDispatcher rd;
+            rd = request.getRequestDispatcher("index.jsp");
+            rd.forward(request, response);
         }
     }
 

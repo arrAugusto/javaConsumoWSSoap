@@ -1,0 +1,10 @@
+.lateralBar{
+    background-image: url('../templateIMG/lateralIMG.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+
+}
+
+.colorText{
+    color: #fff !important;
+}
