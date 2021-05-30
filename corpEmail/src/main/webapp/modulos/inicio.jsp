@@ -273,29 +273,14 @@
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="./correos/recibidos.jsp" class="nav-link">
+                                            <a href="./correos/nuevoCorreo.jsp" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
-                                                <p>Enviados...</p>
+                                                <p>Buzon de Correo...</p>
                                                 <span class="right badge badge-success"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;&nbsp;</span>
 
                                             </a>
-                                        </li>                                    
-                                        <li class="nav-item">
-                                            <a href="./correos/recibidos.jsp" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Recibidos...</p>
-                                                <span class="right badge badge-primary"><i class="fa fa-envelope-open"></i>&nbsp;&nbsp;&nbsp;</span>
+                                        </li>                                          
 
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="./correos/eliminados.jsp" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Eliminados...</p>
-                                                <span class="right badge badge-danger"><i class="fa fa-trash"></i>&nbsp;&nbsp;&nbsp;</span>
-                                            </a>
-                                        </li>
                                     </ul>
 
                                 </li>

@@ -23,5 +23,6 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-maven-jaxws._5f_C_5f_wsUsuarios_2e_asmx_5f_2>http://localhost/wsEmailCorp/wsUsuarios.asmx?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_wsUsuarios_2e_asmx_5f_2>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_wsUsuarios_2e_asmx_5f_3>http://localhost/wsEmailCorp/wsUsuarios.asmx?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_wsUsuarios_2e_asmx_5f_3>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_wsProveedor_2e_asmx>http://localhost/wsEmailCorp/wsProveedor.asmx?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_wsProveedor_2e_asmx>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_wsEmailEnviado_2e_asmx>http://localhost/wsEmailCorp/wsEmailEnviado.asmx?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_wsEmailEnviado_2e_asmx>
     </properties>
 </project-shared-configuration>

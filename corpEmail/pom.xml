@@ -131,6 +131,24 @@
                         <id>wsimport-generate-wsProveedor.asmx</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost/wsEmailCorp/wsEmailEnviado.asmx.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>controladorServletCorreo</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://localhost/wsEmailCorp/wsEmailEnviado.asmx?WSDL</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/wsEmailEnviado.asmx.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-wsEmailEnviado.asmx</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>
