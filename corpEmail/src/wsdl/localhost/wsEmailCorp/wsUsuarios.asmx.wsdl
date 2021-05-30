@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="usuarioConect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="usuarioConectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuarioConectResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="usuarioConsult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="usuarioConsultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuarioConsultResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetPass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetPassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="resetPassResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nitProve" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nom_usuarioParam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ape_usuarioParam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name_emailParam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass_emailParam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefonoParam" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nivelParam" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="newUsuarioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_user" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteUsuarioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="allUser">
+        <s:complexType />
+      </s:element>
+      <s:element name="allUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="allUserResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nom_usuarioParam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ape_usuarioParam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name_emailParam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass_emailParam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefonoParam" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isActivo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nivelParam" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editUsuarioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="usuarioConectSoapIn">
+    <wsdl:part name="parameters" element="tns:usuarioConect" />
+  </wsdl:message>
+  <wsdl:message name="usuarioConectSoapOut">
+    <wsdl:part name="parameters" element="tns:usuarioConectResponse" />
+  </wsdl:message>
+  <wsdl:message name="usuarioConsultSoapIn">
+    <wsdl:part name="parameters" element="tns:usuarioConsult" />
+  </wsdl:message>
+  <wsdl:message name="usuarioConsultSoapOut">
+    <wsdl:part name="parameters" element="tns:usuarioConsultResponse" />
+  </wsdl:message>
+  <wsdl:message name="resetPassSoapIn">
+    <wsdl:part name="parameters" element="tns:resetPass" />
+  </wsdl:message>
+  <wsdl:message name="resetPassSoapOut">
+    <wsdl:part name="parameters" element="tns:resetPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="newUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:newUsuario" />
+  </wsdl:message>
+  <wsdl:message name="newUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:newUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteUsuario" />
+  </wsdl:message>
+  <wsdl:message name="deleteUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="allUserSoapIn">
+    <wsdl:part name="parameters" element="tns:allUser" />
+  </wsdl:message>
+  <wsdl:message name="allUserSoapOut">
+    <wsdl:part name="parameters" element="tns:allUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="editUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:editUsuario" />
+  </wsdl:message>
+  <wsdl:message name="editUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:editUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsUsuariosSoap">
+    <wsdl:operation name="usuarioConect">
+      <wsdl:input message="tns:usuarioConectSoapIn" />
+      <wsdl:output message="tns:usuarioConectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="usuarioConsult">
+      <wsdl:input message="tns:usuarioConsultSoapIn" />
+      <wsdl:output message="tns:usuarioConsultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="resetPass">
+      <wsdl:input message="tns:resetPassSoapIn" />
+      <wsdl:output message="tns:resetPassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newUsuario">
+      <wsdl:input message="tns:newUsuarioSoapIn" />
+      <wsdl:output message="tns:newUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <wsdl:input message="tns:deleteUsuarioSoapIn" />
+      <wsdl:output message="tns:deleteUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="allUser">
+      <wsdl:input message="tns:allUserSoapIn" />
+      <wsdl:output message="tns:allUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editUsuario">
+      <wsdl:input message="tns:editUsuarioSoapIn" />
+      <wsdl:output message="tns:editUsuarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsUsuariosSoap" type="tns:wsUsuariosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="usuarioConect">
+      <soap:operation soapAction="http://tempuri.org/usuarioConect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usuarioConsult">
+      <soap:operation soapAction="http://tempuri.org/usuarioConsult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetPass">
+      <soap:operation soapAction="http://tempuri.org/resetPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newUsuario">
+      <soap:operation soapAction="http://tempuri.org/newUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <soap:operation soapAction="http://tempuri.org/deleteUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allUser">
+      <soap:operation soapAction="http://tempuri.org/allUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editUsuario">
+      <soap:operation soapAction="http://tempuri.org/editUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsUsuariosSoap12" type="tns:wsUsuariosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="usuarioConect">
+      <soap12:operation soapAction="http://tempuri.org/usuarioConect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usuarioConsult">
+      <soap12:operation soapAction="http://tempuri.org/usuarioConsult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetPass">
+      <soap12:operation soapAction="http://tempuri.org/resetPass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newUsuario">
+      <soap12:operation soapAction="http://tempuri.org/newUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <soap12:operation soapAction="http://tempuri.org/deleteUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allUser">
+      <soap12:operation soapAction="http://tempuri.org/allUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editUsuario">
+      <soap12:operation soapAction="http://tempuri.org/editUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsUsuarios">
+    <wsdl:port name="wsUsuariosSoap" binding="tns:wsUsuariosSoap">
+      <soap:address location="http://localhost/wsEmailCorp/wsUsuarios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsUsuariosSoap12" binding="tns:wsUsuariosSoap12">
+      <soap12:address location="http://localhost/wsEmailCorp/wsUsuarios.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -5,10 +5,8 @@
  */
 package controladores;
 
-import controladorServlet.ArrayOfString;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +17,7 @@ import models.conectionUser;
  *
  * @author agr12
  */
-public class usuarioServlet extends HttpServlet {
+public class newUsuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,16 +33,17 @@ public class usuarioServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String usuario = request.getParameter("usuario");
-        String password = request.getParameter("password");
-        ArrayOfString dataUsuario = conexionUsuario.UsuarioConect(usuario, password);
-        if (usuario.equals(dataUsuario.getString().get(7)) && password.equals(dataUsuario.getString().get(1))) {
-            response.sendRedirect("./modulos/inicio.jsp");      
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            String nitReq = request.getParameter("nitReq");
+            String nombresReq = request.getParameter("nombresReq");
+            String apellidosReq = request.getParameter("apellidosReq");
+            String emailReq = request.getParameter("emailReq");
+            String passReq = request.getParameter("passReq");
+            String telefonoReq = request.getParameter("telefonoReq");
+            String nivelReq = request.getParameter("nivelReq");
+            int dataUsuario = conexionUsuario.NewUsuario(nitReq, nombresReq, apellidosReq, emailReq, passReq, telefonoReq, nivelReq);
 
-        } else {
-            RequestDispatcher rd;
-            rd = request.getRequestDispatcher("index.jsp");
-            rd.forward(request, response);
         }
     }
 

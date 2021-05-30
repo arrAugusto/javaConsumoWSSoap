@@ -4,9 +4,81 @@
         <servlet-name>usuarioServlet</servlet-name>
         <servlet-class>controladores.usuarioServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>newUsuario</servlet-name>
+        <servlet-class>controladores.newUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>usuarioNewServlet</servlet-name>
+        <servlet-class>models.usuarioNewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>allUsuario</servlet-name>
+        <servlet-class>controladores.allUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>allUser</servlet-name>
+        <servlet-class>allUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>allUsuarios</servlet-name>
+        <servlet-class>controladores.allUsuarios</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>editUsurio</servlet-name>
+        <servlet-class>controladores.editUsurio</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>newCorreo</servlet-name>
+        <servlet-class>controladores.newCorreo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteUsuario</servlet-name>
+        <servlet-class>controladores.deleteUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>newEmpresa</servlet-name>
+        <servlet-class>controladores.newEmpresa</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>usuarioServlet</servlet-name>
         <url-pattern>/usuarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>newUsuario</servlet-name>
+        <url-pattern>/newUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>usuarioNewServlet</servlet-name>
+        <url-pattern>/usuarioNewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>allUsuario</servlet-name>
+        <url-pattern>/allUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>allUser</servlet-name>
+        <url-pattern>/allUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>allUsuarios</servlet-name>
+        <url-pattern>/allUsuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>editUsurio</servlet-name>
+        <url-pattern>/editUsurio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>newCorreo</servlet-name>
+        <url-pattern>/newCorreo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteUsuario</servlet-name>
+        <url-pattern>/deleteUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>newEmpresa</servlet-name>
+        <url-pattern>/newEmpresa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

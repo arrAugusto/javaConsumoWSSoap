@@ -366,56 +366,46 @@
                     <!-- /.container-fluid -->
                     <div class="card card-info card-outline">
                         <div class="card-body">
-                            <div class="row">
-                                 <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
-                                    <div class="form-group">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                            <form action="../../newUsuario" method="post">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="nitReq" value="" placeholder="Ingresa Nit de Empres a" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
-                                    <input type="text" class="form-control" value="" placeholder="Ingrese Nombre de Usuario" />
-                                </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
-                                    <input type="text" class="form-control" value="" placeholder="Ingrese Apellido de Usuario" />
-                                </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
-                                    <input type="email" class="form-control" value="" placeholder="Ingrese Email de Usuario" />
-                                </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
-                                    <input type="password" class="form-control" value="" placeholder="Ingrese Contraseña de Usuario" />
-                                </div>        
-                                <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
-                                    <input type="text" class="form-control" value="" placeholder="Ingrese Telefono de Usuario" />
-                                </div>   
-                                 <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
-                                    <div class="form-group">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
+                                        <input type="text" class="form-control"name="nombresReq" value="" placeholder="Ingrese Nombres de Usuario" />
                                     </div>
-                                </div>       
-                                <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
-                                    <button type="button" class="btn btn-primary btn-block">Guardar Nuevo Usuario <i class="fas fa-save"></i></button>
-                                </div>                                   
-                            </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
+                                        <input type="text" class="form-control"name="apellidosReq" value="" placeholder="Ingrese Apellido de Usuario" />
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
+                                        <input type="text" class="form-control"name="emailReq" value="" placeholder="Ingrese Email de Usuario" />
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
+                                        <input type="password" class="form-control"name="passReq" value="" placeholder="Ingrese Contraseña de Usuario" />
+                                    </div>        
+                                    <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
+                                        <input type="text" class="form-control"name="telefonoReq" value=""  placeholder="Ingrese Telefono de Usuario" />
+                                    </div>   
+                                    <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
+                                        <div class="form-group">
+                                            <select class="form-control" name="nivelReq" id="exampleFormControlSelect1">
+                                                <option value="1">Medio</option>
+                                                <option value="2">Alto</option>
+                                                <option value="3">Admin</option>
+                                            </select>
+                                        </div>
+                                    </div>       
+                                    <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
+                                        <button type="submit" class="btn btn-primary btn-block">Guardar Nuevo Usuario <i class="fas fa-save"></i></button>
+                                    </div>                                   
+                                </div>
+                            </form>
                         </div>
                     </div>
-
                 </section>
                 <!-- FIN DEL CONTENIDO -->
-
-
-
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost/corpEmail/wsUsuarios.asmx?WSDL" uri="wsdl/localhost/corpEmail/wsUsuarios.asmx.wsdl"/>
+    <system systemId="https://localhost:44368/wsUsuarios.asmx?WSDL" uri="wsdl/localhost_44368/wsUsuarios.asmx.wsdl"/>
+    <system systemId="http://localhost/wsEmailCorp/wsUsuarios.asmx?WSDL" uri="wsdl/localhost/wsEmailCorp/wsUsuarios.asmx.wsdl"/>
+    <system systemId="http://localhost/wsEmailCorp/wsProveedor.asmx?WSDL" uri="wsdl/localhost/wsEmailCorp/wsProveedor.asmx.wsdl"/>
 </catalog>

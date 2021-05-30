@@ -5,21 +5,19 @@
  */
 package controladores;
 
-import controladorServlet.ArrayOfString;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import models.conectionUser;
+import models.conectionEmpresas;
 
 /**
  *
  * @author agr12
  */
-public class usuarioServlet extends HttpServlet {
+public class newEmpresa extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,21 +28,20 @@ public class usuarioServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    conectionUser conexionUsuario = new conectionUser();
-
+    conectionEmpresas conexionEmpresa = new conectionEmpresas();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String usuario = request.getParameter("usuario");
-        String password = request.getParameter("password");
-        ArrayOfString dataUsuario = conexionUsuario.UsuarioConect(usuario, password);
-        if (usuario.equals(dataUsuario.getString().get(7)) && password.equals(dataUsuario.getString().get(1))) {
-            response.sendRedirect("./modulos/inicio.jsp");      
-
-        } else {
-            RequestDispatcher rd;
-            rd = request.getRequestDispatcher("index.jsp");
-            rd.forward(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            String nombreReq = request.getParameter("nombreReq");
+            String dominioReq = request.getParameter("dominioReq");
+            String nitReq = request.getParameter("nitReq");
+            String telReq  = request.getParameter("telReq");
+            String direccionReq = request.getParameter("direccionReq");
+            int dataEmpresa = conexionEmpresa.NewEmpresa(nombreReq, dominioReq, nitReq, telReq, direccionReq);
+            out.println("<h1>Empresa Creada : Ok </h1>");
+            
         }
     }
 

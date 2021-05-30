@@ -4,10 +4,6 @@
     Author     : agr12
 --%>
 
-<%@page import="java.util.Collections"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.Arrays"%>
-<%@page import="java.util.List"%>
 <%@page import="models.conectionUser"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,13 +12,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Corp Email</title>
-        <!-- DataTables -->
-        <link rel="stylesheet" href="https://cdn.datatables.net/keytable/2.6.1/css/keyTable.dataTables.min.css">
-        <!-- DataTables -->
-        <!-- Latest compiled and minified CSS -->
-        
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -357,7 +346,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1 class="m-0">Visualización de usuarios</h1>
+                                <h1 class="m-0">Eliminar Usuario</h1>
                             </div><!-- /.col -->
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
@@ -378,72 +367,44 @@
                     <!-- /.container-fluid -->
                     <div class="card card-info card-outline">
                         <div class="card-body">
-                            <form action="../../newUsuario" method="post">
+                            <form action="../../deleteUsuario" method="post">
                                 <div class="row">
-                                    <div class="col-12 col-lg-12 col-sm-12">
-                                        <!-- form start -->
-                                        <!-- ./wrapper -->
-                  
-                                            <div class="card-body">
-                                                <!--- =======================
-                                                INICIO
-                                                ======================-->
-                                                <div class="box-body">
-                                                    <table role="grid" class="table dt-responsive nowrap table-striped table-bordered display table-sm tb-responsive tablasGeneral" cellspacing="0" >
-                                                        <thead style="background-color: #81BEF7;color: white; font-weight: bold;">
-                                                            <tr>
-                                                                <th style="whidth:5px">#</th>
-                                                                <th>Nombres</th>
-                                                                <th>Apellidos</th>
-                                                                <th>Email</th>
-                                                                <th>Telefono</th>
-                                                                <th>Activo</th>
-                                                                <th>Nivel</th>
-
-                                                            </tr>
-                                                        </thead>
-                                                        <%
-                                                            conectionUser conexionUsuario = new conectionUser();
-                                                            controladorServlet.ArrayOfString dataUsuario = conexionUsuario.AllUser();
-                                                            int contador = 0;
-                                                            for (String s : dataUsuario.getString()) {
-                                                                contador++;
-                                                            }
-                                                            int iterador = contador / 8;
-                                                            int i = 0;
-                                                            for (int iter = 1; iter < iterador; iter++) {
-                                                                int iteraciones = iter * 8;
-                                                                if (iter + 1 != iterador) {
-                                                                    out.println("<tbody><td>" + (iter) + "</td>");
-                                                                    out.println("<td>" + dataUsuario.getString().get(iteraciones - 8) + "</td>");
-                                                                    out.println("<td>" + dataUsuario.getString().get(iteraciones - 7) + "</td>");
-                                                                    out.println("<td>" + dataUsuario.getString().get(iteraciones - 6) + "</td>");
-                                                                    out.println("<td>" + dataUsuario.getString().get(iteraciones - 4) + "</td>");
-                                                                    out.println("<td><div class='btn-group btn-sm'><a type='button' class='btn btn-outline-warning btnEditUser' href=editarUsuarios.jsp?idUsuario=" + dataUsuario.getString().get(iteraciones) + "><i class='fa fa-edit'></i></a><a type='button' class='btn btn-outline-danger btn-sm btnDelete' href=eliminarUsuario.jsp?idUsuario=" + dataUsuario.getString().get(iteraciones) + "><i class='fa fa-trash'></i></a></div></td>");
-                                                                    out.println("<td>" + dataUsuario.getString().get(iteraciones - 2) + "</td></tbody>");
-                                                                }
-                                                                //si se encuentra en la ultima iteración
-                                                                if (iter + 1 == iterador) {
-                                                                    out.println("<tbody><td>" + (iter + 1) + "</td>");
-                                                                    out.println("<td>" + dataUsuario.getString().get(iteraciones ) + "</td>");
-                                                                    out.println("<td>" + dataUsuario.getString().get(iteraciones + 1) + "</td>");
-                                                                    out.println("<td>" + dataUsuario.getString().get(iteraciones + 2) + "</td>");
-                                                                    out.println("<td>" + dataUsuario.getString().get(iteraciones + 4) + "</td>");
-                                                                    out.println("<td><div class='btn-group btn-sm'><a type='button' class='btn btn-outline-warning btnEditUser' href=editarUsuarios.jsp?idUsuario=" + dataUsuario.getString().get(iteraciones) + "><i class='fa fa-edit'></i></a><a type='button' class='btn btn-outline-danger btn-sm btnDelete' href=eliminarUsuario.jsp?idUsuario=" + dataUsuario.getString().get(iteraciones) + "><i class='fa fa-trash'></i></a></div></td>");
-
-                                                                    out.println("<td>" + dataUsuario.getString().get(iteraciones + 6) + "</td></tbody>");
-                                                                }
-
-                                                            }
-                                                        %>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                
-
-
-                                    </div>
-
+                                    <%
+                                        String idUsuario = request.getParameter("idUsuario");
+                                        conectionUser conexionUsuario = new conectionUser();
+                                        controladorServlet.ArrayOfString dataUsuario = conexionUsuario.ConsultaUsuarioID(idUsuario);
+                                        out.println("<div class='col-lg-6 col-md-12 col-sm-12 mt-4'>");
+                                        out.println("<input type='text' class='form-control' name='nitReq' value='"+dataUsuario.getString().get(0)+"' placeholder='Ingresa Nit de Empres a' />");
+                                        out.println("<input type='hidden' name='idReq' value='"+dataUsuario.getString().get(7)+"'/>");
+                                        out.println("</div>");
+                                        out.println("<div class='col-lg-6 col-md-12 col-sm-12 mt-4'>");
+                                        out.println("<input type='text' class='form-control'name='nombresReq' value='"+dataUsuario.getString().get(1)+"' placeholder='Ingrese Nombres de Usuario' />");
+                                        out.println("</div>");
+                                        out.println("<div class='col-lg-6 col-md-12 col-sm-12 mt-4'>");
+                                        out.println("<input type='text' class='form-control'name='apellidosReq' value='"+dataUsuario.getString().get(2)+"' placeholder='Ingrese Apellido de Usuario' />");
+                                        out.println("</div>");
+                                        out.println("<div class='col-lg-6 col-md-12 col-sm-12 mt-4'>");
+                                        out.println("<input type='text' class='form-control'name='emailReq' value='"+dataUsuario.getString().get(3)+"' placeholder='Ingrese Email de Usuario' />");
+                                        out.println("</div>");
+                                        out.println("<div class='col-lg-6 col-md-12 col-sm-12 mt-4'>");
+                                        out.println("<input type='password' class='form-control'name='passReq' value='"+dataUsuario.getString().get(4)+"' placeholder='Ingrese Contraseña de Usuario' />");
+                                        out.println("</div>");
+                                        out.println("<div class='col-lg-6 col-md-12 col-sm-12 mt-4'>");
+                                        out.println("<input type='text' class='form-control'name='telefonoReq' value='"+dataUsuario.getString().get(5)+"'  placeholder='Ingrese Telefono de Usuario' />");
+                                        out.println("</div>");
+                                        out.println("<div class='col-lg-6 col-md-12 col-sm-12 mt-4'>");
+                                        out.println("<div class='form-group'>");
+                                        out.println("<select class='form-control' name='nivelReq' id='exampleFormControlSelect1'>");
+                                        out.println("<option value='1'>Medio</option>");
+                                        out.println("<option value='2'>Alto</option>");
+                                        out.println("<option value='3'>Admin</option>");
+                                        out.println("</select>");
+                                        out.println("</div>");
+                                        out.println("</div>");
+                                    %>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 mt-4">
+                                        <button type="submit" class="btn btn-outline-danger btn-block">Eliminar Nuevo Usuario <i class="fas fa-trash"></i></button>
+                                    </div>                                   
                                 </div>
                             </form>
                         </div>
@@ -467,10 +428,10 @@
             </aside>
             <!-- /.control-sidebar -->
         </div>
+        <!-- ./wrapper -->
+
         <!-- jQuery -->
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../plugins/jquery/jquery.min.js"></script>
         <!-- jQuery UI 1.11.4 -->
         <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -492,8 +453,7 @@
         <script src="../plugins/moment/moment.min.js"></script>
         <script src="../plugins/daterangepicker/daterangepicker.js"></script>
         <!-- Tempusdominus Bootstrap 4 -->
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
         <!-- Summernote -->
         <script src="../plugins/summernote/summernote-bs4.min.js"></script>
         <!-- overlayScrollbars -->
@@ -504,11 +464,5 @@
         <script src="../dist/js/demo.js"></script>
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src="../dist/js/pages/dashboard.js"></script>
-        <!-- DataTables -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/keytable/2.6.1/js/dataTables.keyTable.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-
     </body>
 </html>
