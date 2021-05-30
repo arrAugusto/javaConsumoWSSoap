@@ -40,6 +40,10 @@
         <servlet-name>newEmpresa</servlet-name>
         <servlet-class>controladores.newEmpresa</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>nuevoCorreo</servlet-name>
+        <servlet-class>controladores.nuevoCorreo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>usuarioServlet</servlet-name>
         <url-pattern>/usuarioServlet</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>newEmpresa</servlet-name>
         <url-pattern>/newEmpresa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>nuevoCorreo</servlet-name>
+        <url-pattern>/nuevoCorreo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -352,27 +352,32 @@
                                 </div>
                                 <div class="card-body p-0">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <form action="../../nuevoCorreo" method="post">
                                         <ul class="nav nav-pills flex-column">
                                             <li class="nav-item">
                                                 <label>Destinatario</label>
-                                                <input name="nitReq" class="form-control" type="text" placeholder="Ingresa Nit de Empresa" value="">
+                                                <input name="destina" class="form-control" type="text" placeholder="Ingresa destinatario" value="">
+                                                <input name="destinatario" type="hidden" value="15">
+                                                <input name="remitente" type="hidden" value="13">
+                                                
+                                            
                                             </li>
                                             <li class="nav-item">
                                                 <label>Asunto</label>
-                                                <input name="nitReq" class="form-control" type="text" placeholder="Ingresa Nit de Empresa" value="">
+                                                <input name="asuntoReq" class="form-control" type="text" placeholder="Ingresa Asunto" value="">
                                             </li>
 
                                             <li class="nav-item">
                                                 <label>Mensaje</label>
-                                                <input name="nitReq" class="form-control" type="text" placeholder="Ingresa Nit de Empresa" value="">
+                                                <input name="mensjae" class="form-control" type="text" placeholder="Ingresa Correo" value="">
                                             </li>
                                         <li class="nav-item">
-                                            <button type="button" class="btn btn-outline-success btn-block mt-4">Enviar... <i class="fa fa-envelope"></i></button>
+                                            <button type="submit" class="btn btn-outline-success btn-block mt-4">Enviar... <i class="fa fa-envelope"></i></button>
                                         </li>  
                                         <li class="nav-item mt-4">
                                         </li>                                          
                                         </ul>
-     
+                                        </form>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->

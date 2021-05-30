@@ -139,7 +139,7 @@
                             <wsdlFiles>
                                 <wsdlFile>localhost/wsEmailCorp/wsEmailEnviado.asmx.wsdl</wsdlFile>
                             </wsdlFiles>
-                            <packageName>controladorServletCorreo</packageName>
+                            <packageName>controladorServletEmail</packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
